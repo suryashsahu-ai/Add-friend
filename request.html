@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add friend</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+        html{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            background-color: rgb(235, 221, 223);
+        }
+        .card{
+            border-radius: 10px;
+            height: 490px;
+            width: 350px;
+            background-color: aliceblue;
+            padding: 30px;
+            text-align: center;
+            }
+         .card img{
+            height: 50%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+         }
+         .card h1{
+            font-size: 25px;
+            margin: 10px 0;
+         }
+         .card h5{
+            font-size: 25px;
+            color: red;
+            margin: 20px;
+        
+
+         }
+          .card button{
+            background-color: cadetblue;
+            color: #fff;
+            font-weight: 700;
+            padding: 12px 20px;
+            border-radius: 10px;
+            width: 140px;
+            cursor: pointer;
+         }
+         .card #move{
+            background-color: #dadada;
+            color: #fff;
+         }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div id="img">
+            <img src="https://static.vecteezy.com/system/resources/previews/060/294/268/non_2x/cartoon-boy-portrait-with-house-landscape-background-cute-illustration-style-art-vector.jpg" alt="img">
+        </div>
+        <h1>Jagrati sahu</h1>
+        <h5>Stranger</h5>
+        <div id="btn-con">
+            <button>Add Friend</button>
+            <button id="move">Remove</button>
+        </div>
+    </div>
+<script>
+    let btn=document.querySelector("button");
+    let sts=document.querySelector("h5");
+    let move=document.querySelector("#move");
+    let flag=0;
+    btn.addEventListener( "click",function(){
+        if( flag===0){
+            sts.innerText="friends"
+            sts.style.color="green"
+            btn.style.background="#dadada"
+            move.style.background="cadetblue"
+            move.style.color="white"
+            flag=1;
+        }
+        })
+    move.addEventListener("click",function(){
+        if(flag===1){
+           sts.innerText="Stranger"
+            sts.style.color="red"
+            btn.style.background="cadetblue"
+            move.style.background="#dadada"
+          
+            flag=0;
+          }
+       
+    })
+</script>    
+</body>
+</html>
